@@ -5,7 +5,7 @@ import React, { useState, useEffect } from "react";
 function App() {
   const [message, setMessage] = useState("");
   useEffect(() => {
-    fetch('/api/hello', { credentials: true } )
+    fetch('/api/hello', { credentials: 'include' } )
         .then(response => response.text())
         .then(message => {
             setMessage(message);
