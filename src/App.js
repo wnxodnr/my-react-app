@@ -11,7 +11,7 @@ function App() {
 
     axios({
       method: "get", // 통신 방식
-      url: "/api/hello", // 서버
+      url: "http://15.164.141.217:8080/api/hello", // 서버
     })
     .then(function(response) {
       console.log(response.data)
