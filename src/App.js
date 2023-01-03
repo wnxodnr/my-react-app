@@ -7,7 +7,8 @@ function App() {
   useEffect(() => {
     fetch("/hello", {
       headers: {
-        Accept: "application/json",
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
       },
       method: "GET",
     } )
