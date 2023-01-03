@@ -5,7 +5,12 @@ import React, { useState, useEffect } from "react";
 function App() {
   const [message, setMessage] = useState([]);
   useEffect(() => {
-    fetch("/hello")
+    fetch("/hello", {
+      headers: {
+        Accept: "application/json",
+      },
+      method: "GET",
+    } )
       .then((res) => {
         return res.json();
       })
