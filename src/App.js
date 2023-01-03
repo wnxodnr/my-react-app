@@ -1,10 +1,28 @@
 import logo from './logo.svg';
 import './App.css';
 import React, { useState, useEffect } from "react";
+import axios from 'axios';
+
 
 function App() {
   const [message, setMessage] = useState("");
   useEffect(() => {
+
+
+    axios({
+      method: "get", // 통신 방식
+      url: "/api/hello", // 서버
+    })
+    .then(function(response) {
+      console.log(response.data)
+      setMessage(response.data);
+      console.log(response.status)
+      console.log(response.statusText)
+      console.log(response.headers)
+      console.log(response.config)
+    })
+  },[])
+/*
     fetch('/api/hello', 
         { 
           method: 'GET',
@@ -19,6 +37,7 @@ function App() {
             setMessage(message);
         });
 },[])
+*/
 
   return (
     <div className="App">
