@@ -5,7 +5,15 @@ import React, { useState, useEffect } from "react";
 function App() {
   const [message, setMessage] = useState("");
   useEffect(() => {
-    fetch('/api/hello', { credentials: 'include' } )
+    fetch('/api/hello', 
+        { 
+          method: 'GET',
+          credentials: 'include',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          }
+        } )
         .then(response => response.text())
         .then(message => {
             setMessage(message);
