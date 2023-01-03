@@ -13,6 +13,7 @@ function App() {
       method: "GET",
     } )
       .then((res) => {
+        console.log(res);
         return res.json();
       })
       .then((data) => {
